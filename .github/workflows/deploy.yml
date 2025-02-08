@@ -48,8 +48,6 @@ jobs:
 
     - name: Update kube config
       run: aws eks --region ap-southeast-1 update-kubeconfig --name simple-bank
-      run: |
-        echo "apiVersion: apps/v1
 
     - name: Deploy image to Amazon EKS
       run: |
