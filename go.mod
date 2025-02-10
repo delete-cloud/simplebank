@@ -7,6 +7,7 @@ require (
 	github.com/gin-gonic/gin v1.10.0
 	github.com/go-playground/validator/v10 v10.23.0
 	github.com/golang-jwt/jwt v3.2.2+incompatible
+	github.com/golang-migrate/migrate/v4 v4.18.2
 	github.com/google/uuid v1.6.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.26.1
 	github.com/lib/pq v1.10.9
@@ -17,6 +18,7 @@ require (
 	golang.org/x/crypto v0.31.0
 	golang.org/x/exp v0.0.0-20241108190413-2d47ceb2692f
 	google.golang.org/genproto/googleapis/api v0.0.0-20250204164813-702378808489
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20250204164813-702378808489
 	google.golang.org/grpc v1.70.0
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.5.1
 	google.golang.org/protobuf v1.36.5
@@ -35,6 +37,8 @@ require (
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/goccy/go-json v0.10.3 // indirect
+	github.com/hashicorp/errwrap v1.1.0 // indirect
+	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
@@ -61,7 +65,6 @@ require (
 	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/sys v0.28.0 // indirect
 	golang.org/x/text v0.22.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20250204164813-702378808489 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 )
 
