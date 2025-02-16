@@ -10,10 +10,10 @@ INSERT INTO verify_emails (
 -- name: UpdateVerifyEmail :one
 UPDATE verify_emails
 SET
-    is_used = true
+    is_used = TRUE
 WHERE
     id = @id
     AND secret_code = @secret_code
     AND is_used = FALSE
-    AND expires_at > now()
+    AND expired_at > now()
 RETURNING *;

@@ -17,14 +17,12 @@ func (server *Server) VerifyEmail(ctx context.Context, req *pb.VerifyEmailReques
 		return nil, invalidArgumentError(violations)
 	}
 
-	arg := db.VerifyEmalTxParams{
+	txResult, err := server.store.VerifyEmalTx(ctx, db.VerifyEmalTxParams{
 		EmailId:    req.GetEmailId(),
 		SecretCode: req.GetSecretCode(),
-	}
-
-	txResult, err := server.store.VerifyEmalTx(ctx, arg)
+	})
 	if err != nil {
-		return nil, status.Errorf(codes.Internal, "failed to verify email")
+		return nil, status.Errorf(codes.Internal, "failed to verify email: %v", err)
 	}
 
 	rsp := &pb.VerifyEmailResponse{
