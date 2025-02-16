@@ -31,7 +31,7 @@ db_schema:
 	dbml2sql --postgres -o doc/schema.sql doc/db.dbml
 
 sqlc:
-	sqlc generate
+	sqlc generate 
 
 test:
 	go test -v -cover -short ./...
@@ -41,6 +41,7 @@ server:
 
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/delete-cloud/simplebank/db/sqlc Store
+	mockgen -package mockwk -destination worker/mock/distributor.go github.com/delete-cloud/simplebank/worker TaskDistributor
 
 proto:
 	rm pb/*.go
