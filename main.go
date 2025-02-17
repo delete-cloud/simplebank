@@ -100,7 +100,8 @@ func runTaskProcessor(
 	waitGroup *errgroup.Group,
 	config util.Config,
 	redisOpt asynq.RedisClientOpt,
-	store db.Store) {
+	store db.Store,
+) {
 	mailer := mail.NewGmailSender(config.EmailSenderName, config.EmailSenderAddress, config.EmailSenderPassword)
 	taskProcessor := worker.NewRedisTaskProcessor(redisOpt, store, mailer)
 
@@ -126,7 +127,8 @@ func runGrpcServer(
 	waitGroup *errgroup.Group,
 	config util.Config,
 	store db.Store,
-	taskDistributor worker.TaskDistributor) {
+	taskDistributor worker.TaskDistributor,
+) {
 	server, err := gapi.NewServer(config, store, taskDistributor)
 	if err != nil {
 		log.Fatal().Err(err).Msg("cannot create server")
@@ -186,7 +188,8 @@ func runGatewayServer(
 	waitGroup *errgroup.Group,
 	config util.Config,
 	store db.Store,
-	taskDistributor worker.TaskDistributor) {
+	taskDistributor worker.TaskDistributor,
+) {
 	server, err := gapi.NewServer(config, store, taskDistributor)
 	if err != nil {
 		log.Fatal().Err(err).Msg("cannot create server")
